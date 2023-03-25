@@ -1,0 +1,69 @@
+/*todoList css*/
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+.wrapper {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+} 
+.todo-app-globalcounter{
+    display: flex;
+    flex-direction: row;
+}
+.global-counter-red{
+    color: red;
+}
+.todo-counter-green{
+    color: green;
+}
+.todo-span {
+    font-size: 20px;
+    margin: 3.5px 10px;
+}
+.ul-list{
+    padding-inline-start: 0px !important;
+    margin-block-start: 0em !important;
+}
+
+/*addTodo css*/
+.addtodo {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+.addtodo label {
+    font-size: 16px;
+    color: #444;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.addtodo input {
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+.todosubmit {
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+.todosubmit:hover {
+    background-color: #3E8E41;
+}

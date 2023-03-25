@@ -1,0 +1,76 @@
+/*app counter css*/
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+.wrapper {
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+} 
+.counter-card{
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.count-div{
+    display: flex;
+    align-items: center;
+}
+.todo-counter{
+    margin-top: 8px;
+    color: green;
+}
+
+/*counter css*/
+.counters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+}
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+.inc-button {
+    background-color: #28a745;
+}
+.dec-button {
+    background-color: #dc3545;
+} 
+.primary-btn {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/*common*/
+.count-span {
+    font-size: 20px;
+    margin: 0 10px;
+}
+h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+
+

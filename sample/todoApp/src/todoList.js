@@ -5,6 +5,7 @@ import { AddTodo as AddTodoComponent } from './addTodo';
 import { TodoReducer } from './store/todoReducer';
 import { GlobalStore } from 'redux-micro-frontend';
 import { AddTodo, RemoveTodo } from './store/todo.actions';
+import "./todo.css"
 
 export class TodoList extends React.Component {
     constructor(props) {
@@ -55,21 +56,26 @@ export class TodoList extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container wrapper">
+                <div className="todo-app-globalcounter">
+                    <h2 className='global-counter-red'>
+                        Global Counter : 
+                    </h2>
+                    <span className="todo-span">
+                    {this.state.globalCounter} 
+                    </span>
+                </div>
                 <AddTodoComponent addTodo={this.addTodo}></AddTodoComponent>
-                <h2>Todos</h2>
-                <ul>
+                <h2 className='todo-counter-green'>Todos</h2>
+                <ul className='ul-list'>
                     {this.state.todos.map(todo => {
                         return (
-                            <li>
+                            <li key={todo.id}>
                                 <Todo id={todo.id} description={todo.description} removeTodo={this.removeTodo}/>
                             </li>
                         )
                     })}
                 </ul>
-                <div>
-                    Global Counter: {this.state.globalCounter}
-                </div>
             </div>
         )
     }

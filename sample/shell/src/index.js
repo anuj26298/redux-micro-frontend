@@ -1,3 +1,4 @@
+import "./index.css";
 (function() {
 
     window["micro-front-end-context"] = true;

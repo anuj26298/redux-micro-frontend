@@ -4,6 +4,7 @@ import { GlobalStore } from 'redux-micro-frontend';
 import { CounterReducer } from './store/counterReducer';
 import { IncrementLocalCounter, DecrementLocalCounter } from './store/local.actions';
 import { IncrementGlobalCounter, DecrementGlobalCounter } from './store/global.actions';
+import './counter.css';
 
 export class AppCounter extends React.Component {
     constructor(props) {
@@ -49,18 +50,18 @@ export class AppCounter extends React.Component {
             todo: globalState.CounterApp.todo
         });
     }
-
-
     render() {
         return (
-            <div>
-                <Counter count={this.state.global} header="Global Counter" increment={this.incrementGlobalCounter} decrement={this.decrementGlobalCounter}></Counter>
-                <Counter count={this.state.local} header="Local Counter" increment={this.incrementLocalCounter} decrement={this.decrementLocalCounter}></Counter>
-                <h2>
-                    Todo Counter
+          <div className='container wrapper'>
+              <Counter className="counter-card" count={this.state.global} header="Global Counter" increment={this.incrementGlobalCounter} decrement={this.decrementGlobalCounter} headingColor="red"></Counter>
+              <Counter className="counter-card" count={this.state.local} header="Local Counter" increment={this.incrementLocalCounter} decrement={this.decrementLocalCounter} headingColor="black"></Counter>
+              <div className="count-div">
+                <h2 className='todo-counter'>
+                    Todo Counter : 
                 </h2>
-                <span>{this.state.todo}</span>
-            </div>
+                <span className='count-span'>{this.state.todo}</span>
+              </div>
+          </div>
         )
     }
 }

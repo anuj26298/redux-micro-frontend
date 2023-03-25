@@ -1,0 +1,14 @@
+body {
+    background-color: #F5F5F5;
+}
+.app-wrap {
+    padding-bottom: 10px;
+}
+.two-segment{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.header {
+    text-align: center;
+}

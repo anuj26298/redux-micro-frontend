@@ -14,12 +14,12 @@ export class AddTodo extends React.Component {
 
     render() {
         return (
-            <div>
-                <label>Add Todo Object</label>
+            <div className="addtodo">
+                <label>Add Todo Object:</label>
                 <input type='Text' placeholder="Enter Todo" ref={node => {
                     this.description = node;
                 }}></input>
-                <button onClick={this.addTodo}>Submit</button>
+                <button className="todosubmit" onClick={this.addTodo}>Submit</button>
             </div>
         )
     }
