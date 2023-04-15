@@ -8,15 +8,72 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  - job: BuildLibrary
+		build:
     runs-on: ubuntu-latest
+    displayName: Build Library
+    pool:
+      vmImage: ubuntu-latest    
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Test
-        run: npm run test
-        
-          
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '12.x'
+        checkLatest: true
+    - task: Npm@1
+      displayName: Install Dependencies
+      inputs:
+        command: 'install'
+    - task: Npm@1
+      displayName: Build Library
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+    - task: Npm@1
+      displayName: Test
+      inputs:
+      command: 'custom'
+      customCommand: 'run test'
+  - job: BuildSample
+	  build:
+    runs-on: ubuntu-latest
+    displayName: Build Sample Projects
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '12.x'
+        checkLatest: true
+    - task: Npm@1
+      displayName: Install Counter App Dependencies
+      inputs:
+        command: 'install'
+        workingDir: 'sample/counterApp'
+    - task: Npm@1
+      displayName: Build Counter App
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+        workingDir: 'sample/counterApp'
+    - task: Npm@1
+      displayName: Install Todo App Dependencies
+      inputs:
+        command: 'install'
+        workingDir: 'sample/todoApp'
+    - task: Npm@1
+      displayName: Build Todo App
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+        workingDir: 'sample/todoApp'
+    - task: Npm@1
+      displayName: Install Shell Dependencies
+      inputs:
+        command: 'install'
+        workingDir: 'sample/shell'
+    - task: Npm@1
+      displayName: Build Shell
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+        workingDir: 'sample/shell'
