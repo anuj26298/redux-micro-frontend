@@ -9,7 +9,7 @@ on:
 
 jobs:
   - job: BuildLibrary
-		build:
+    build:
     runs-on: ubuntu-latest
     displayName: Build Library
     pool:
@@ -34,7 +34,7 @@ jobs:
       command: 'custom'
       customCommand: 'run test'
   - job: BuildSample
-	  build:
+    build:
     runs-on: ubuntu-latest
     displayName: Build Sample Projects
     pool:
